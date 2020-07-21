@@ -11,7 +11,7 @@ import Particles from 'react-particles-js';
 import {connect} from 'react-redux';
 import * as actions from './appActions';
 
-// BACKGROUIND ANIMATION OPTIONS 
+// BACKGROUIND ANIMATION OPTIONS  
 const particlesOptions = {
   particles: {
       number:{
