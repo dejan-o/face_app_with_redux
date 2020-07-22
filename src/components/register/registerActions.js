@@ -1,23 +1,23 @@
 import * as constants from './registerActionsConstants'
 
-export const onNameChange = (text)=>{
+export const onNameChange = (payload)=>{
     return {
         type: constants.REGISTER_NAME_CHANGE,
-        payload: text
+        payload
     }
   }
 
-  export const onEmailChange = (text)=>{
+  export const onEmailChange = (payload)=>{
     return {
         type: constants.REGISTER_EMAIL_CHANGE,
-        payload: text
+        payload
     }
   }
 
-  export const onPasswordChange = (text)=>{
+  export const onPasswordChange = (payload)=>{
     return {
         type: constants.REGISTER_PASSWORD_CHANGE,
-        payload: text
+        payload
     }
   }
 
@@ -30,10 +30,10 @@ export const onNameChange = (text)=>{
               email: email,
               password: password
             })
-          }).then(response => response.json()).then(user => {
-              if(user.id){
-              console.log(user);
-              dispatch({type:'LOAD_USER', payload: user})
+          }).then(response => response.json()).then(payload => {
+              if(payload.id){
+              console.log(payload);
+              dispatch({type:'LOAD_USER', payload})
               dispatch({type:'ROUTE_CHANGE',payload:'home'});
             }
           })

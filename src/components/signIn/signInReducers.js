@@ -10,9 +10,9 @@ const initialState = {
 export const setSignInField = (state = initialState, action={})=> {
     switch(action.type){
         case constants.SIGNIN_EMAIL_CHANGE:
-            return Object.assign({},state,{signInEmail: action.payload})
+            return {...state,signInEmail: action.payload}
         case constants.SIGNIN_PASSWORD_CHANGE:
-            return Object.assign({},state,{signInPassword: action.payload})
+            return {...state,signInPassword: action.payload}
         case 'RESET':
             return initialState
         default:

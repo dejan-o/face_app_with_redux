@@ -6,8 +6,12 @@ import './ImageLinkForm.css';
 const ImageLinkForm = ({input,userId,onInputChange, onButtonSubmit}) =>{
     
     const calculateFaceLocation = (data)=>{
-        const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
-        
+        console.log(data);
+        const clarifaiFace = data.outputs?.[0]?.data?.regions?.[0]?.region_info?.bounding_box;
+        if(!clarifaiFace)
+          return {};
+
+
         const image = document.getElementById('inputImage');
         const width = Number(image.width);
         

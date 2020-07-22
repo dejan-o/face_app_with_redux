@@ -1,16 +1,16 @@
 import * as constants from './signinActionsConstants';
 
-export const onEmailChange = (text)=>{
+export const onEmailChange = (payload)=>{
     return {
         type: constants.SIGNIN_EMAIL_CHANGE,
-        payload: text
+        payload
     }
   }
 
-  export const onPasswordChange = (text)=>{
+  export const onPasswordChange = (payload)=>{
     return {
         type: constants.SIGNIN_PASSWORD_CHANGE,
-        payload: text
+        payload
     }
   }
 
@@ -22,11 +22,11 @@ export const onEmailChange = (text)=>{
                 email: email,
                 password: password
               })
-            }).then(response => response.json()).then(data => {
-              if(data.id){
-                console.log(data);
-                dispatch({type:'LOAD_USER', payload: data})
-                dispatch({type:'ROUTE_CHANGE',payload:'home'});
+            }).then(response => response.json()).then(payload => {
+              if(payload.id){
+                console.log(payload);
+                dispatch({type:'LOAD_USER', payload})
+                dispatch({type:'ROUTE_CHANGE', payload:'home'});
               }
             })
             

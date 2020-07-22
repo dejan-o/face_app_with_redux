@@ -1,37 +1,37 @@
 import * as constants from './appActionsConstants';
 
-export const loadUser = (user)=>{
+export const loadUser = (payload)=>{
    return { 
     type: constants.LOAD_USER,
-    payload: user
+    payload: payload
 };
 }
 
-export const routeChange = (route)=> {
+export const routeChange = (payload)=> {
     return {
         type: constants.ROUTE_CHANGE,
-        payload: route 
+        payload
     }
 }
 
-export const inputChange = (url) => {
+export const inputChange = (payload) => {
     return {
         type: constants.INPUT_URL_IMG_CHANGE,
-        payload: url
+        payload
     }
 }
 
-export const inputUrlSubmit = (url) => {
+export const inputUrlSubmit = (payload) => {
     return {
         type: constants.INPUT_URL_IMG_SUBMIT,
-        payload: url
+        payload
     }
 }
 
-export const displayFaceBox = (box) => {
+export const displayFaceBox = (payload) => {
     return {
         type: constants.SAVE_BOX_POINTS,
-        payload: box 
+        payload
     }
 }
 
@@ -68,7 +68,7 @@ export const onImageSubmit = (inputUrl,userId,calculator) => (dispatch)=>{
             }
     
            dispatch(displayFaceBox(calculator(response)))
-        }).catch((e) => e.printStackTrace());
+        }).catch((e) => console.log(e));
       };
 
 
