@@ -8,5 +8,5 @@ export const INPUT_URL_IMG_SUBMIT = 'INPUT_URL_IMG_SUBMIT';
 
 export const SAVE_BOX_POINTS = 'SAVE_BOX_POINTS';
 
-export const RESET = 'RESET'
+export const RESET = 'RESET';
 
