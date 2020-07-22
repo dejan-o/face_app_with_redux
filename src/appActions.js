@@ -3,7 +3,7 @@ import * as constants from './appActionsConstants';
 export const loadUser = (payload)=>{
    return { 
     type: constants.LOAD_USER,
-    payload: payload
+    payload
 };
 }
 
